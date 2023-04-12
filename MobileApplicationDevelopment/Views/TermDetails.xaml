@@ -1,0 +1,82 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApplicationDevelopment.Views.TermDetails"
+             Appearing="ContentPage_Appearing">
+    <NavigationPage.TitleView>
+        <Label Text="Term Details" FontSize="Medium"></Label>
+    </NavigationPage.TitleView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="SaveButton" Text="Save" Clicked="SaveButton_Clicked"></ToolbarItem>
+        <ToolbarItem x:Name="DeleteButton" Text="Delete" Clicked="DeleteButton_Clicked"></ToolbarItem>
+        <ToolbarItem x:Name="AddCourseButton" Text="Add Course" Clicked="AddCourseButton_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Spacing="5">
+            <Label Text="Use the form below to edit term details."
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Term Title:" FontSize="Medium"/>
+            <Entry x:Name="titleTextBox" Placeholder="Enter Title Here"/>
+            <Label Text="Start Date:" FontSize="Medium"/>
+            <DatePicker x:Name="startDatePicker"/>
+            <Label Text="End Date:" FontSize="Medium"/>
+            <DatePicker x:Name="endDatePicker"/>
+            <Label Text="Term Courses"
+                VerticalOptions="Start" 
+                HorizontalOptions="Start"
+                   FontSize ="Medium"/>
+
+            <SearchBar x:Name="courseSearchBar" TextChanged="courseSearchBar_TextChanged"/>
+            <CollectionView x:Name="courseCollectionView"
+                                EmptyView="Add a course to see it displayed here." 
+                                SelectionMode="Single"
+                                SelectionChanged="courseCollectionView_SelectionChanged"
+                                ItemsSource="{Binding Course}">
+
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"
+                                       ItemSpacing="10"/>
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="2" BorderColor="DarkSlateGray" >
+                            <StackLayout>
+
+                                <Grid   Padding="5" RowSpacing="1" BackgroundColor="#E4E0E0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition  />
+                                        <ColumnDefinition  />
+                                        <ColumnDefinition  />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Column="0" FontSize="21" Text="{Binding Name}" HorizontalTextAlignment="Center"/>
+                                    <Label Grid.Column="1" FontSize="18" HorizontalTextAlignment="Center">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Start Date: " />
+                                                <Span Text="{Binding StartDateString}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Grid.Column="2" FontSize="18" HorizontalTextAlignment="Center">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="End Date: " />
+                                                <Span Text="{Binding EndDateString}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                </Grid>
+
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileApplicationDevelopment.Android", "MobileApplicationDevelopment.Android\MobileApplicationDevelopment.Android.csproj", "{FC9B03CF-4432-4FE9-80D8-646207B8FA7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileApplicationDevelopment", "MobileApplicationDevelopment\MobileApplicationDevelopment.csproj", "{78DE3997-A7D7-4A7E-8FB3-77B9AE6B3972}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC9B03CF-4432-4FE9-80D8-646207B8FA7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC9B03CF-4432-4FE9-80D8-646207B8FA7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC9B03CF-4432-4FE9-80D8-646207B8FA7D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FC9B03CF-4432-4FE9-80D8-646207B8FA7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC9B03CF-4432-4FE9-80D8-646207B8FA7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC9B03CF-4432-4FE9-80D8-646207B8FA7D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{78DE3997-A7D7-4A7E-8FB3-77B9AE6B3972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78DE3997-A7D7-4A7E-8FB3-77B9AE6B3972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78DE3997-A7D7-4A7E-8FB3-77B9AE6B3972}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{78DE3997-A7D7-4A7E-8FB3-77B9AE6B3972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78DE3997-A7D7-4A7E-8FB3-77B9AE6B3972}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78DE3997-A7D7-4A7E-8FB3-77B9AE6B3972}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FFEFDAEE-C36F-4F32-8CC9-F528EB3CD164}
+	EndGlobalSection
+EndGlobal

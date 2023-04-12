@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApplicationDevelopment.Views.CourseDetails"
+             Appearing="ContentPage_Appearing">
+    
+    <NavigationPage.TitleView>
+        <Label Text="Course Details" FontSize="Medium"></Label>
+    </NavigationPage.TitleView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="SaveButton" Text="Save" Clicked="SaveButton_Clicked"></ToolbarItem>
+        <ToolbarItem x:Name="DeleteButton" Text="Delete" Clicked="DeleteButton_Clicked"></ToolbarItem>
+        <ToolbarItem x:Name="AddAssessmentButton" Text="Add Assignment" Clicked="AddAssessmentButton_Clicked"></ToolbarItem>
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="5">
+                <Label Text="Use the form below to modify course details."
+                VerticalOptions="Start"
+                HorizontalOptions="CenterAndExpand" />
+                <Label Text="Course Title:" FontSize="Medium"/>
+                <Entry x:Name="titleTextBox" Placeholder="Enter Title Here"/>
+                <Label Text="Start Date:" FontSize="Medium"/>
+                <DatePicker x:Name="startDatePicker"/>
+                <Label Text="End Date:" FontSize="Medium"/>
+                <DatePicker x:Name="endDatePicker"/>
+                <Label Text="Course Status:" FontSize="Medium"/>
+                <Picker x:Name="statusPicker" Title="Choose a course status.">
+                    <Picker.Items>
+                        <x:String>Pending</x:String>
+                        <x:String>In Progress</x:String>
+                        <x:String>Completed</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label Text="Course Instructor's Name:" FontSize="Medium"/>
+                <Entry x:Name="instructorNameTextBox" Placeholder="Enter Instructor Name Here."/>
+                <Label Text="Course Instructor's Phone Number:" FontSize="Medium"/>
+                <Entry x:Name="instructorPhoneTextBox" Placeholder="Enter Instructor Phone Number Here."/>
+                <Label Text="Course Instructor's Email:" FontSize="Medium"/>
+                <Entry x:Name="instructorEmailTextBox" Placeholder="Enter Instructor Email Here."/>
+                <Label Text="Notes:" FontSize="Medium"/>
+                <Entry x:Name="notesTextBox" Placeholder="Enter Optional Notes Here."/>
+                <Button x:Name="ShareNotesButton" Text="Share Notes" Clicked="ShareNotesButton_Clicked" HorizontalOptions="Start"/>
+                <Label Text="Course Start Notification:" FontSize="Medium"/>
+                <Switch x:Name="startNotificationSwitch" HorizontalOptions="Start"/>
+                <Label Text="Course End Notification:" FontSize="Medium"/>
+                <Switch x:Name="endNotificationSwitch" HorizontalOptions="Start"/>
+                <Label Text="Course Assignments" FontSize="Medium"/>
+
+
+                <CollectionView x:Name="assessmentCollectionView"
+                                EmptyView="Add an assignment to see it displayed here." 
+                                SelectionMode="Single"
+                                SelectionChanged="assessmentCollectionView_SelectionChanged"
+                                ItemsSource="{Binding Assessment}">
+
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical"
+                                       ItemSpacing="10"/>
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="2" BorderColor="DarkSlateGray" >
+                                <StackLayout>
+
+                                    <Grid   Padding="5" RowSpacing="1" BackgroundColor="#E4E0E0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition  />
+                                            <ColumnDefinition  />
+                                            <ColumnDefinition  />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Grid.Column="0" FontSize="21" Text="{Binding Name}" HorizontalTextAlignment="Center"/>
+                                        <Label Grid.Column="1" FontSize="18" HorizontalTextAlignment="Center">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Start Date: " />
+                                                    <Span Text="{Binding StartDateString}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Label Grid.Column="2" FontSize="18" HorizontalTextAlignment="Center">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Due Date: " />
+                                                    <Span Text="{Binding EndDateString}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                    </Grid>
+
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

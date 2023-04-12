@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApplicationDevelopment.Views.TestPage">
+    <NavigationPage.TitleView>
+        <Label Text="Add Term" FontSize="Medium"></Label>
+    </NavigationPage.TitleView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="SaveButton" Text="Save" Clicked="SaveButton_Clicked"></ToolbarItem>
+        <ToolbarItem x:Name="CancelButton" Text="Cancel" Clicked="CancelButton_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Spacing="5">
+            <Label Text="Use the form below to create a new term."
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Term Title:" FontSize="Medium"/>
+            <Entry x:Name="titleTextBox" Placeholder="Enter Title Here"/>
+            <Label Text="Start Date:" FontSize="Medium"/>
+            <DatePicker x:Name="startDatePicker"/>
+            <Label Text="End Date:" FontSize="Medium"/>
+            <DatePicker x:Name="endDatePicker"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

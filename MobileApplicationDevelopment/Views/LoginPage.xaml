@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApplicationDevelopment.Views.LoginPage">
+    <NavigationPage.TitleView>
+        <Label   Text="Term Planner Login" FontSize="Medium"></Label>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="instructionsLabel" Text="Please enter your username and password below."
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="userNameTextBox" Placeholder="Username" ></Entry>
+            <Entry x:Name="passwordTextBox" Placeholder="Password" IsPassword="True" Completed="submitButton_Clicked"></Entry>
+
+            <Button x:Name ="submitButton" Text="Submit" Clicked="submitButton_Clicked" HorizontalOptions="Start"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApplicationDevelopment.Views.AddAssessmentPage">
+    <NavigationPage.TitleView>
+        <Label Text="Add Assignment" FontSize="Medium"></Label>
+    </NavigationPage.TitleView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="SaveButton" Text="Save" Clicked="SaveButton_Clicked"></ToolbarItem>
+        <ToolbarItem x:Name="CancelButton" Text="Cancel" Clicked="CancelButton_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="5">
+                <Label Text="Use the form below to create an assignment."
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+                <Label Text="Assignment Name:" FontSize="Medium"/>
+                <Entry x:Name="nameTextBox" Placeholder="Enter Assignment Name Here"/>
+                <Label Text="Start Date:" FontSize="Medium"/>
+                <DatePicker x:Name="startDatePicker"/>
+                <Label Text="End Date:" FontSize="Medium"/>
+                <DatePicker x:Name="endDatePicker"/>
+                <Label Text="Assignment Type:" FontSize="Medium"/>
+                <Entry x:Name="assessmentTypePicker" Placeholder="Enter an assignment type.">
+                    
+                </Entry>
+                
+                <Label Text="Assignment Start Notification:" FontSize="Medium"/>
+                <Switch x:Name="startNotificationSwitch" HorizontalOptions="Start"/>
+                <Label Text="Assignment Due Notification:" FontSize="Medium"/>
+                <Switch x:Name="endNotificationSwitch" HorizontalOptions="Start"/>
+
+
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
